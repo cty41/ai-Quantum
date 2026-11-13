@@ -84,6 +84,10 @@
 | [AGENTS.md](AGENTS.md) | 代理：阅读顺序、仓库地图、修改约定和硬边界 |
 | [llms.txt](llms.txt) | 指向本仓库文件的简短导航。它不会自动加载文档，也不构成授权 |
 | [docs/strategy.md](docs/strategy.md) | 纪律正文 |
+| [docs/cases/300308-2026-11.md](docs/cases/300308-2026-11.md) | 一笔经授权的过程记录。价位不是普遍门槛 |
+| [docs/inventory.md](docs/inventory.md) | 已有工具、已有技能、可升格约定、缺失能力 |
+| [docs/evidence-contract.md](docs/evidence-contract.md) | 截止时间、来源状态、事实与缺口、成交分级 |
+| [docs/maintenance.md](docs/maintenance.md) | 仓库副本与宿主技能的对照，以及怎样扩展 |
 | [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md) | 流动性修复配方、指标字典、覆盖说明和易中天示例 |
 | [skills/pre-open-overnight-risk-check/](skills/pre-open-overnight-risk-check/SKILL.md) | 盘前检查技能、来源、模板、示例和合成验收例 |
 
@@ -93,7 +97,7 @@
 
 ## 公开范围
 
-本仓库公开可见。可以放在这里的，是纪律、空白模板、检查技能和标明为合成的例子。填好的计划、复盘、真实检查记录，以及账户、真实仓位、成本、盈亏、密钥或私人通知地址，都不要推送上来。
+本仓库公开可见。可以放在这里的，是纪律、空白模板、检查技能、标明为合成的例子，以及单独授权的一笔过程记录。那一笔可以包含它自己的股数、价格和金额，不包含总资金、其他持仓，或能据此反推总资金的比例。其他填好的计划、复盘和真实检查记录，以及账户、券商、密钥或私人通知地址，都不要推送上来。仓库文档不会自动同步到宿主里的技能副本。宿主里的 `liquidity-repair-trade-review` 对应 `skills/liquidity-repair`，路径和名字不同。
 
 <a id="license"></a>
 

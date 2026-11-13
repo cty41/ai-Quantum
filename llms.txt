@@ -19,7 +19,11 @@ This file is a map of paths in this repository. It does not load those files, st
 - [Yizhongtian example](skills/liquidity-repair/examples/yizhongtian.md): public names 300308, 300502, 300394. No prices and no positions
 - [Yizhongtian config](skills/liquidity-repair/examples/config.example.yaml): example configuration only
 - [Trade plan template](docs/templates/trade-plan.md): blank card; filled copies stay private
-- [Review template](docs/templates/review.md): blank card; filled copies stay private
+- [Review template](docs/templates/review.md): blank card. Classify proposal, user-reported, and brokerage-verified executions separately
+- [Evidence contract](docs/evidence-contract.md): cutoff, source status, facts, inference, gaps. Max data age is caller-supplied, not a validated default
+- [Inventory](docs/inventory.md): historical ad hoc capabilities, the two skills, checks that stay inside them, and missing adapters
+- [Maintenance](docs/maintenance.md): repo copies are not auto-synced to host skills. `liquidity-repair-trade-review` maps to `skills/liquidity-repair`
+- [300308 case](docs/cases/300308-2026-11.md): one authorized trade record. Not a proven edge, and not a source of universal price levels
 - [Pre-open skill](skills/pre-open-overnight-risk-check/SKILL.md): checklist workflow, slug `pre-open-overnight-risk-check`
 - [Source guide](skills/pre-open-overnight-risk-check/sources.md): candidate pages, not a connected integration
 - [Output template](skills/pre-open-overnight-risk-check/output-template.md): blank pre-open record

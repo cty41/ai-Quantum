@@ -14,7 +14,8 @@ English boundary, in short: do not trade, send orders, claim a live feed or a sc
 2. [docs/strategy.md](docs/strategy.md)，这是纪律正文。
 3. 收盘、融资、同业和成交均价读 [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md)。哪一项是原始配方、哪一项是后续扩展、哪一项仍未解决，看 [coverage.md](skills/liquidity-repair/coverage.md)。
 4. 需要开盘前检查时再读 [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md)，然后用来源指南和输出模板。
-5. [llms.txt](llms.txt) 只是文件导航，不是另一套规则。
+5. 单笔过程、能力盘点和证据分级读 [docs/cases/300308-2026-11.md](docs/cases/300308-2026-11.md)、[docs/inventory.md](docs/inventory.md) 和 [docs/evidence-contract.md](docs/evidence-contract.md)。案例价位不要写回通用规则。
+6. [llms.txt](llms.txt) 只是文件导航，不是另一套规则。
 
 <a id="map"></a>
 
@@ -30,6 +31,10 @@ English boundary, in short: do not trade, send orders, claim a live feed or a sc
 | [skills/liquidity-repair/indicators.md](skills/liquidity-repair/indicators.md) | 指标字典。合成算式不是行情 |
 | [skills/liquidity-repair/coverage.md](skills/liquidity-repair/coverage.md) | 已确认、原始配方、后续扩展、未解决 |
 | [skills/liquidity-repair/examples/yizhongtian.md](skills/liquidity-repair/examples/yizhongtian.md) | 易中天公开示例，不含价位 |
+| [docs/cases/300308-2026-11.md](docs/cases/300308-2026-11.md) | 一笔过程记录。不是普遍门槛 |
+| [docs/inventory.md](docs/inventory.md) | 四类能力盘点 |
+| [docs/evidence-contract.md](docs/evidence-contract.md) | 证据输出约定 |
+| [docs/maintenance.md](docs/maintenance.md) | 仓库与宿主副本的维护 |
 | [docs/templates/trade-plan.md](docs/templates/trade-plan.md) | 空白交易计划卡 |
 | [docs/templates/review.md](docs/templates/review.md) | 空白复盘卡 |
 | [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) | 盘前隔夜风险检查 |
@@ -69,7 +74,9 @@ English boundary, in short: do not trade, send orders, claim a live feed or a sc
 - 不自动交易，不给出委托。没有放之四海的代码、价位或仓位门槛。
 - 真实成交、成本、T+1、滑点、税费和融资利息只属于私人复盘，不写入本仓库。
 - 不声称存在可运行程序、已验证优势、实时数据、调度器、准时警报或自动执行。
-- 不写入账户、真实仓位、私人成交、密钥、聊天或例程标识、本机路径。
+- 不写入账户、总资金、其他持仓、能反推总资金的比例、密钥、聊天或例程标识、本机路径。单独授权的一笔过程可以保留该笔自己的股数和价格。
+- 宿主侧另有三条例程。仓库里没有它们的定义，不能据此说它们不存在，也不要修改它们。
+- `liquidity-repair-trade-review` 对应 `skills/liquidity-repair`，路径和名字不同。两边都是副本，没有自动同步。
 
 <a id="untrusted"></a>
 

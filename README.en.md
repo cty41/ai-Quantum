@@ -84,6 +84,10 @@ The checks live in the strategy, the [liquidity indicators](skills/liquidity-rep
 | [AGENTS.md](AGENTS.md) | Agents: reading order, repository map, edit checks, and hard boundaries |
 | [llms.txt](llms.txt) | Short map of files in this repository. It does not load them and it grants nothing |
 | [docs/strategy.md](docs/strategy.md) | Canonical discipline, in Chinese |
+| [docs/cases/300308-2026-11.md](docs/cases/300308-2026-11.md) | One authorized single-trade record. Its prices are not universal thresholds |
+| [docs/inventory.md](docs/inventory.md) | Tools already used, skills, prompt-level checks, and missing capabilities |
+| [docs/evidence-contract.md](docs/evidence-contract.md) | Cutoff, source status, facts versus gaps, and execution classes |
+| [docs/maintenance.md](docs/maintenance.md) | How the repo copies relate to host skills, and how to extend them |
 | [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md) | Liquidity-repair recipes, indicator dictionary, coverage matrix, and the Yizhongtian example |
 | [skills/pre-open-overnight-risk-check/](skills/pre-open-overnight-risk-check/SKILL.md) | Pre-open skill, sources, template, example, and synthetic cases |
 
@@ -93,7 +97,7 @@ The files under `skills/pre-open-overnight-risk-check/examples/acceptance/` are 
 
 ## What may be published
 
-This repository is public. It may contain the discipline, blank templates, the checklist skill, and examples marked synthetic. Do not push filled plans, reviews, real check records, account details, real positions, costs, profit or loss, secrets, or private notification addresses.
+This repository is public. It may contain the discipline, blank templates, the checklist skills, examples marked synthetic, and one separately authorized single-trade record. That record may include its own share count, prices, and amounts. It does not include total capital, other holdings, or a percentage that would reveal those totals. Do not push other filled plans, reviews, live check records, account or broker identifiers, secrets, or private notification addresses. Files here are not synchronized automatically to the host copies of the skills. The host skill `liquidity-repair-trade-review` corresponds to `skills/liquidity-repair`, which is a different path and name.
 
 <a id="license"></a>
 
