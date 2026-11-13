@@ -1,0 +1,25 @@
+# ai-Quantum
+
+> Markdown observation notes for a horizon of several trading days to several weeks, plus a pre-open checklist. Not a trading application, not a live data feed, and not permission to order.
+
+This file is a map of paths in this repository. It does not load those files, start a job, or grant authorization. Host safety rules and the user's own authorization still apply. Canonical rules are not copied here.
+
+## Start
+
+- [Chinese README](README.md): human entry, maturity, and the steps that exist today
+- [English README](README.en.md): the same facts in English
+- [AGENTS.md](AGENTS.md): reading order, repository map, edit checks, and hard boundaries
+
+## Canonical documents
+
+- [Strategy](docs/strategy.md): the discipline. Chinese. Do not treat the READMEs as a second copy
+- [Trade plan template](docs/templates/trade-plan.md): blank card; filled copies stay private
+- [Review template](docs/templates/review.md): blank card; filled copies stay private
+- [Pre-open skill](skills/pre-open-overnight-risk-check/SKILL.md): checklist workflow, slug `pre-open-overnight-risk-check`
+- [Source guide](skills/pre-open-overnight-risk-check/sources.md): candidate pages, not a connected integration
+- [Output template](skills/pre-open-overnight-risk-check/output-template.md): blank pre-open record
+- [Example configuration](skills/pre-open-overnight-risk-check/examples/config.example.yaml): public example only, not a holding and not a scheduler
+
+## Status
+
+There is no application entry point, package manifest, test command, license file, or live integration in this repository. Missing or conflicting core data means an incomplete check, not a conclusion that conditions are safe.
