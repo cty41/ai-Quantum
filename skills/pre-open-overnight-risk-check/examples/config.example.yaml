@@ -1,0 +1,60 @@
+schema_version: 1
+kind: public-example-configuration
+skill: pre-open-overnight-risk-check
+label: 公开示例。不是持仓，不是成交，也不是已经启用的调度。
+display_timezone: Asia/Shanghai
+caller_supplied:
+  horizon: 数个交易日至数周
+  trading_hypothesis: 由当次调用方填写。示例文件不预置假设。
+  cutoff: 由当次调用方填写，并带时区。下面的 09:15 只是公开示例里的愿望时间。
+  evidence_location: ""
+  recipients: ""
+schedule_illustration:
+  applies_to: 仅本公开示例，不是技能通用规则
+  calendar: A 股开市日。须核对交易所假日，周一至周五不等于开市。
+  nominal_start: "08:30"
+  nominal_start_timezone: Asia/Shanghai
+  possible_routine_start_window: "08:15-08:30"
+  queue_delay_possible: true
+  aim_to_record_before: "09:15"
+  aim_note: 希望在集合竞价前留下记录。这是愿望，不是完成保证。
+  guaranteed_output_at_0830: false
+  this_skill_includes_scheduler: false
+  this_skill_includes_realtime_feed: false
+  guaranteed_first_mover: false
+  modify_existing_routines: false
+  note: 开始目标不是完成保证。别处管理的例程可以在 08:15–08:30 启动，排队延迟可能发生。不保证 08:30 有输出。本技能没有调度器，也没有实时推送。不得因本文件静默修改现有运行例程。
+watchlist:
+  - symbol: "300308"
+    name: 中际旭创
+    market: SZSE
+    board: ChiNext
+    role: 示例观察标的
+  - symbol: "300502"
+    name: 新易盛
+    market: SZSE
+    board: ChiNext
+    role: 示例观察标的
+  - symbol: "300394"
+    name: 天孚通信
+    market: SZSE
+    board: ChiNext
+    role: 示例观察标的
+  - symbol: NVDA
+    name: NVIDIA
+    market: Nasdaq
+    role: 外部锚
+    mechanical_mapping_to_a_share_open: false
+optional_peers:
+  instruction: 需求侧的其他同业，只有调用方写入当次名单才检查。此处不预置代码，避免把示例写成固定同业规则。
+  items: []
+markets_to_verify:
+  - id: CN-A
+    calendar: 上交所与深交所公布的开市安排，包含节假日
+  - id: US-equity
+    calendar: 上一完整常规交易时段，包含交易所假日与 America/New_York 的夏令时
+    timezone: America/New_York
+    sessions_to_separate:
+      - regular_close
+      - afterhours
+      - futures
