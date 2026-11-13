@@ -1,0 +1,72 @@
+schema_version: 1
+kind: public-example-configuration
+skill: liquidity-repair
+label: 公开示例「易中天」。不是持仓，不是已启用的调度，也不是已部署的程序。
+display_timezone: Asia/Shanghai
+group_name: 易中天
+universe_note: 光模块观察的公开示例组，不是所有行业的固定名单。
+names:
+  - symbol: "300308"
+    name: 中际旭创
+    market: SZSE
+    board: ChiNext
+    role: 示例目标证券
+  - symbol: "300502"
+    name: 新易盛
+    market: SZSE
+    board: ChiNext
+    role: 示例同业
+  - symbol: "300394"
+    name: 天孚通信
+    market: SZSE
+    board: ChiNext
+    role: 示例同业
+optional_index:
+  symbol: "399006"
+  name: 创业板指
+  market: SZSE
+  required: false
+recipes:
+  original_close_shape_alert:
+    scope: single_name
+    applies_to: "300308"
+    cadence_note: 沪深交易日收盘完成后。历史计划时点约 15:15 Asia/Shanghai，不是完成保证。
+    requires_both:
+      - stage_climax_volume_qualitative
+      - long_lower_shadow_qualitative
+    frozen_multiple: null
+    deployed_program: false
+    silence_means_no_risk: false
+  daily_three_name_volume_review:
+    status: later_extension
+    since: "2026-11-13"
+    scope: three_names
+    symbols:
+      - "300308"
+      - "300502"
+      - "300394"
+    deployed_program: false
+    same_as_original_shape_alert: false
+unresolved:
+  prior_20_sessions_include_current_bar: unresolved
+  suspension_treatment: unresolved
+  adjustment_basis: unresolved
+  doji_body_to_range_ratio: unresolved
+margin:
+  planned_clock: "09:00"
+  tolerance_minutes: 15
+  timezone: Asia/Shanghai
+  data_session: previous_complete_session
+  lag: T+1
+  guaranteed_publication_at_planned_clock: false
+  dullness_means_monotone_repayment_decline: false
+peers:
+  windows:
+    - 5m
+    - 15m
+  compare:
+    - direction
+    - pullback_high
+    - pullback_low
+  day_percent_change_is_sufficient: false
+price_levels_included: false

@@ -20,7 +20,7 @@
 
 ## 成熟度
 
-- 已有的是 Markdown 纪律、空白模板和一份可复制的检查技能。
+- 已有的是 Markdown 纪律、空白模板和两份可复制的检查技能。单股收盘形态提醒，和 2026-11-13 起预期的每日三只收盘量能对照，是两件不同的事。后者没有部署成程序。
 - 这不是已经验证能够盈利的策略，这里也没有回测结果。一次结果不能证明统计优势。
 - 没有可运行的程序，没有实时行情或新闻集成，没有调度器，也不会自动下单。
 - 许可证尚未指定。未指定不等于已经允许使用、复制或再分发。
@@ -34,8 +34,9 @@
 1. 阅读 [短线观察纪律](docs/strategy.md)。
 2. 做一次观察前，把 [交易计划卡](docs/templates/trade-plan.md) 另存到私人位置再填写。填好的卡片不要提交回本仓库。
 3. 结束后用 [复盘卡](docs/templates/review.md)，同样只留在私人位置。
-4. 开盘前检查按 [技能说明](skills/pre-open-overnight-risk-check/SKILL.md) 填写 [输出模板](skills/pre-open-overnight-risk-check/output-template.md)。[示例配置](skills/pre-open-overnight-risk-check/examples/config.example.yaml) 只演示字段，不是持仓，也不是已经启用的任务。
-5. 若所用环境本来就会加载技能目录，可以把 `skills/pre-open-overnight-risk-check` 整个目录复制过去。复制不会创建定时任务，也不会改动别处已有的例程。
+4. 收盘、融资、同业和成交均价按 [流动性修复技能](skills/liquidity-repair/SKILL.md) 做。[指标字典](skills/liquidity-repair/indicators.md) 定义字段。[易中天示例](skills/liquidity-repair/examples/yizhongtian.md) 只说明 300308、300502、300394 怎么套用，不含价位。
+5. 开盘前检查按 [技能说明](skills/pre-open-overnight-risk-check/SKILL.md) 填写 [输出模板](skills/pre-open-overnight-risk-check/output-template.md)。[示例配置](skills/pre-open-overnight-risk-check/examples/config.example.yaml) 只演示字段，不是持仓，也不是已经启用的任务。
+6. 若所用环境本来就会加载技能目录，可以把 `skills/liquidity-repair` 或 `skills/pre-open-overnight-risk-check` 整个目录复制过去。复制不会创建定时任务，也不会改动别处已有的例程。
 
 <a id="workflows"></a>
 
@@ -43,7 +44,7 @@
 
 | 流程 | 正文 |
 | --- | --- |
-| 数日至数周的流动性修复观察、持有与退出 | [docs/strategy.md](docs/strategy.md) |
+| 数日至数周的流动性修复观察、持有与退出 | [docs/strategy.md](docs/strategy.md)，操作配方在 [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md) |
 | 当次计划与事后复盘 | [交易计划卡](docs/templates/trade-plan.md)、[复盘卡](docs/templates/review.md) |
 | 开盘前的日历、海外时段与新闻核对 | [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) |
 
@@ -53,7 +54,7 @@
 
 ## 数据与来源
 
-核对要求写在纪律正文和 [来源指南](skills/pre-open-overnight-risk-check/sources.md) 里。入口只保留这些边界：
+核对要求写在纪律正文、[流动性指标](skills/liquidity-repair/indicators.md) 和 [盘前来源指南](skills/pre-open-overnight-risk-check/sources.md) 里。入口只保留这些边界：
 
 - 分开常规收盘、盘后、期货和休市报价。每条价格带原始时区，并给出 Asia/Shanghai 对照。日历包含假日和夏令时，公历工作日不等于开市。
 - 搜索摘要和缓存不是最新价格。候选页面不是已经接通的接口；本仓库写入时没有做实况抓取。
@@ -68,6 +69,8 @@
 - 长期基本面只用来检查持有窗口内的突发重大负面，不用来确认短线入场。
 - 新闻只补充卖压、同业和价格承接，不代替它们。
 - 示例里的 08:30（Asia/Shanghai）是开始目标，希望在 09:15 前留下记录。它不是完成保证。别处的例程即使在 08:15–08:30 启动，也可能排队。不保证该时刻有输出，也不保证先于别人发现。
+- 收盘检查的历史计划时点约为 15:15，早盘融资约为 09:00（Asia/Shanghai）。两者都不是准时产出。09:00 读到的是上一交易日融资，属于 T+1 滞后证据。缺数时结论是「检查不完整」，不是已知没有风险。
+- 「天量」和「长下影」没有约定倍数。近 20 日是否包含当日、停牌怎么计、复权口径和十字星比例仍未解决。
 - 私人成交、全部成本、T+1、滑点、税费和融资利息只出现在私人复盘里，不写入本仓库。
 - 有效性若要以后再谈，须先冻结规则，只用当时已经存在的证据，并做多样本、样本外检验。
 
@@ -81,6 +84,7 @@
 | [AGENTS.md](AGENTS.md) | 代理：阅读顺序、仓库地图、修改约定和硬边界 |
 | [llms.txt](llms.txt) | 指向本仓库文件的简短导航。它不会自动加载文档，也不构成授权 |
 | [docs/strategy.md](docs/strategy.md) | 纪律正文 |
+| [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md) | 流动性修复配方、指标字典、覆盖说明和易中天示例 |
 | [skills/pre-open-overnight-risk-check/](skills/pre-open-overnight-risk-check/SKILL.md) | 盘前检查技能、来源、模板、示例和合成验收例 |
 
 合成验收例在 `skills/pre-open-overnight-risk-check/examples/acceptance/`，不是真实行情或新闻。

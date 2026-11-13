@@ -12,8 +12,9 @@ English boundary, in short: do not trade, send orders, claim a live feed or a sc
 
 1. [README.md](README.md) 或 [README.en.md](README.en.md)，确认成熟度和哪些步骤今天做得到。
 2. [docs/strategy.md](docs/strategy.md)，这是纪律正文。
-3. 需要开盘前检查时再读 [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md)，然后用来源指南和输出模板。
-4. [llms.txt](llms.txt) 只是文件导航，不是另一套规则。
+3. 收盘、融资、同业和成交均价读 [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md)。哪一项是原始配方、哪一项是后续扩展、哪一项仍未解决，看 [coverage.md](skills/liquidity-repair/coverage.md)。
+4. 需要开盘前检查时再读 [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md)，然后用来源指南和输出模板。
+5. [llms.txt](llms.txt) 只是文件导航，不是另一套规则。
 
 <a id="map"></a>
 
@@ -25,6 +26,10 @@ English boundary, in short: do not trade, send orders, claim a live feed or a sc
 | [README.en.md](README.en.md) | 英文入口 |
 | [llms.txt](llms.txt) | 相对链接导航 |
 | [docs/strategy.md](docs/strategy.md) | 纪律正文 |
+| [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md) | 流动性修复操作配方 |
+| [skills/liquidity-repair/indicators.md](skills/liquidity-repair/indicators.md) | 指标字典。合成算式不是行情 |
+| [skills/liquidity-repair/coverage.md](skills/liquidity-repair/coverage.md) | 已确认、原始配方、后续扩展、未解决 |
+| [skills/liquidity-repair/examples/yizhongtian.md](skills/liquidity-repair/examples/yizhongtian.md) | 易中天公开示例，不含价位 |
 | [docs/templates/trade-plan.md](docs/templates/trade-plan.md) | 空白交易计划卡 |
 | [docs/templates/review.md](docs/templates/review.md) | 空白复盘卡 |
 | [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) | 盘前隔夜风险检查 |
@@ -43,7 +48,7 @@ English boundary, in short: do not trade, send orders, claim a live feed or a sc
 
 - 改纪律时改 [docs/strategy.md](docs/strategy.md)。不要把全文复制进 README、本文件或 `llms.txt`。
 - 中英 README 使用同一组锚点：`purpose`、`naming`、`status`、`quick-start`、`workflows`、`data`、`limitations`、`docs`、`public`、`license`。改一边时核对另一边的事实，而不是各写各的。
-- 技能前言里的 `name` 保持 `pre-open-overnight-risk-check`。示例配置保持独立文件，不要把其中的证券写进通用规则。
+- 两份技能的 `name` 分别保持 `liquidity-repair` 和 `pre-open-overnight-risk-check`。示例配置保持独立文件，不要把其中的证券或价位写进通用规则。未解决的 20 日窗口、停牌、复权和十字星比例不要擅自填成数字。
 - 验收例保持 `synthetic: true`，并写明不是真实行情。不要用后来才知道的信息把合成例子改成看似真实的历史事件。
 - 新增链接只用本仓库内已经存在的相对路径。
 - 不添加许可证文件，除非用户明确选定一种。
@@ -57,7 +62,7 @@ English boundary, in short: do not trade, send orders, claim a live feed or a sc
 - 窗口是数个交易日至数周的流动性修复观察。先写当次假设和持有窗口。入场、继续持有和退出分开评估。
 - 核心观察是卖压是否减弱、同业是否一致、价格承接，以及已标记历史交易区域还剩多少空间。新闻只补充这几项。
 - 长期价值框架不作为短线入场确认。基本面只检查持有窗口内的突发重大负面。
-- 保护参考只在确认更高的有效回踩低点之后上移。
+- 保护参考只在确认更高的有效回踩低点之后上移。已确认保护参考的首次跌破可以立即提醒。该价不是必须守到的卖出价，也不保证成交。两根短周期 K 线不是已证明的优势，不能用来推迟首次破位提醒。
 - 价格要核对真伪、所属会话、日历和夏令时。核心数据缺失、过期或冲突时写「检查不完整」，不写「无风险」或「无重大新闻」。
 - 原始来源和首次发布时间优先于转载、摘要和传闻。两个转载不是相互印证。
 - 记录停在当次截止之前已经存在的证据。不用后见信息回填。

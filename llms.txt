@@ -13,6 +13,11 @@ This file is a map of paths in this repository. It does not load those files, st
 ## Canonical documents
 
 - [Strategy](docs/strategy.md): the discipline. Chinese. Do not treat the READMEs as a second copy
+- [Liquidity repair skill](skills/liquidity-repair/SKILL.md): close, margin, peer, and VWAP recipes. Not a deployed job
+- [Indicator dictionary](skills/liquidity-repair/indicators.md): fields, units, and unresolved choices. Numeric examples are synthetic
+- [Coverage](skills/liquidity-repair/coverage.md): confirmed discipline, original recipe, later extension, unresolved
+- [Yizhongtian example](skills/liquidity-repair/examples/yizhongtian.md): public names 300308, 300502, 300394. No prices and no positions
+- [Yizhongtian config](skills/liquidity-repair/examples/config.example.yaml): example configuration only
 - [Trade plan template](docs/templates/trade-plan.md): blank card; filled copies stay private
 - [Review template](docs/templates/review.md): blank card; filled copies stay private
 - [Pre-open skill](skills/pre-open-overnight-risk-check/SKILL.md): checklist workflow, slug `pre-open-overnight-risk-check`
