@@ -15,6 +15,7 @@
 | [docs/strategy.md](docs/strategy.md) | 已约定纪律；未验证参数单独列出；外部材料未采纳、不收录链接 |
 | [docs/templates/trade-plan.md](docs/templates/trade-plan.md) | 空白交易计划卡 |
 | [docs/templates/review.md](docs/templates/review.md) | 空白复盘卡 |
+| [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) | 盘前隔夜风险检查。通用流程，不含观察名单和调度 |
 
 阅读顺序是先看纪律，再按需另抄计划卡和复盘卡。通用规则里不写死某一次的证券、同行、价位、周期、日期、仓位或金额。
 
@@ -24,12 +25,24 @@
 - 长期基本面只用来检查持有窗口内有没有突发重大负面。盈利预测、供给改善等更长周期的条件，不能直接当成短线入场条件。
 - 短线观察与长期价值研究分开。本仓库不收录价值研究材料。
 - 观察频率不是交易频率。固定间隔的检查不能代替止损，也不会自动下单，也不能把一次碰价当成必须卖出。
-- 本仓库没有交易软件、行情程序、回测框架、自动下单或代理流程。文中的检查步骤是给人执行和记录的。
+- 本仓库没有交易软件、行情程序、回测框架或自动下单。盘前检查技能是一份可复制的流程说明，不连接实时数据，也不会下单。
 - 若以后要讨论统计优势，须事先冻结规则，在多个事件、多个标的上做样本外检验，并计入 T+1、滑点、税费、融资利息和无法成交。
+
+## 盘前隔夜风险检查
+
+技能正文是 [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md)。它说明开盘前如何核对交易日历、上一完整海外时段，以及持有窗口内的突发新闻。这是流程文档，不是已经接通的实时行情或新闻，也没有付费接口。
+
+安装：把目录 `skills/pre-open-overnight-risk-check` 复制到所用代理约定的技能目录。本仓库没有安装脚本。复制不会创建定时任务。
+
+使用：观察名单、持有窗口、截止时间、证据存放处和接收人由当次调用方提供，不写在通用规则里。来源候选见 [sources.md](skills/pre-open-overnight-risk-check/sources.md)，空白输出见 [output-template.md](skills/pre-open-overnight-risk-check/output-template.md)。
+
+公开示例配置是 [examples/config.example.yaml](skills/pre-open-overnight-risk-check/examples/config.example.yaml)。其中的证券只作示例，不是持仓。名义开始时间是 Asia/Shanghai 的 A 股开市日 08:30，并希望在 09:15 前留下记录。08:30 是开始目标，不是完成保证。别处的例程可以在 08:15–08:30 启动，排队延迟可能发生。不保证 08:30 有输出。执行前仍要核对 A 股假日。本技能没有调度器，没有实时推送，也不保证先于别人发现。已有运行例程另行管理，不要因这些文件去改它们。
+
+`examples/acceptance/` 里的四则记录都是合成例子，不是真实行情或新闻。
 
 ## 公开范围
 
-本仓库公开可见。可以放在这里的，是纪律和空白模板。填好的计划卡、复盘卡，以及账户、真实仓位、成本、盈亏、密钥或私人通知地址，都不要推送到这个仓库。
+本仓库公开可见。可以放在这里的，是纪律、空白模板、检查技能和标明为合成的例子。填好的计划卡、复盘卡、真实检查记录，以及账户、真实仓位、成本、盈亏、密钥或私人通知地址，都不要推送到这个仓库。
 
 ## 许可证
 
