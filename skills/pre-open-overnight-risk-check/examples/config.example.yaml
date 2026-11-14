@@ -23,7 +23,7 @@ schedule_illustration:
   this_skill_includes_realtime_feed: false
   guaranteed_first_mover: false
   modify_existing_routines: false
-  note: 开始目标不是完成保证。别处管理的例程可以在 08:15–08:30 启动，排队延迟可能发生。不保证 08:30 有输出。本技能没有调度器，也没有实时推送。不得因本文件静默修改现有运行例程。
+  note: "开始目标不是完成保证。这些钟点不是仓库里的任务。原创环境里的私人例程不属于本仓库，克隆之后不存在；它们若曾在 08:15–08:30 启动，排队延迟可能发生。不保证 08:30 有输出。本技能没有调度器，也没有实时推送。不得因本文件修改那些私人例程。"
 watchlist:
   - symbol: "300308"
     name: 中际旭创

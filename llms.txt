@@ -1,14 +1,16 @@
 # ai-Quantum
 
-> Markdown observation notes for a horizon of several trading days to several weeks, plus a pre-open checklist. Not a trading application, not a live data feed, and not permission to order.
+> A-share liquidity-repair research notes for several trading days to several weeks, plus a pre-open checklist. Not a validated edge, not a live data product, not a general short-term framework for other markets, and not permission to order.
 
-This file is a map of paths in this repository. It does not load those files, start a job, or grant authorization. Host safety rules and the user's own authorization still apply. Canonical rules are not copied here.
+This file is a map of paths in this repository. It does not load those files, install `skills/*/SKILL.md`, start a job, or grant authorization. Ordinary Cursor and other agents do not auto-install `skills/*/SKILL.md` from a clone. Host safety rules and the user's own authorization still apply. Read the skills inside a complete clone; copying a skill directory out breaks links to `../../docs`. Canonical rules are not copied here. Documentation version `2026-11-14`: [CHANGELOG.md](CHANGELOG.md). License: [MIT](LICENSE), copyright Frank Cheng, 2026.
 
 ## Start
 
 - [Chinese README](README.md): human entry, maturity, and the steps that exist today
 - [English README](README.en.md): the same facts in English
 - [AGENTS.md](AGENTS.md): reading order, repository map, edit checks, and hard boundaries
+- [Changelog](CHANGELOG.md): documentation changes for version `2026-11-14`
+- [LICENSE](LICENSE): MIT License. Copyright (c) 2026 Frank Cheng. Redistribution keeps the copyright and permission notices
 
 ## Canonical documents
 
@@ -22,7 +24,7 @@ This file is a map of paths in this repository. It does not load those files, st
 - [Review template](docs/templates/review.md): blank card. Classify proposal, user-reported, and brokerage-verified executions separately
 - [Evidence contract](docs/evidence-contract.md): cutoff, source status, facts, inference, gaps. Max data age is caller-supplied, not a validated default
 - [Inventory](docs/inventory.md): historical ad hoc capabilities, the two skills, checks that stay inside them, and missing adapters
-- [Maintenance](docs/maintenance.md): repo copies are not auto-synced to host skills. `liquidity-repair-trade-review` maps to `skills/liquidity-repair`
+- [Maintenance](docs/maintenance.md): maintain a complete clone. Private routines in the original environment are not in this repository and are absent after a clone
 - [300308 case](docs/cases/300308-2026-11.md): one authorized trade record. Not a proven edge, and not a source of universal price levels
 - [Pre-open skill](skills/pre-open-overnight-risk-check/SKILL.md): checklist workflow, slug `pre-open-overnight-risk-check`
 - [Source guide](skills/pre-open-overnight-risk-check/sources.md): candidate pages, not a connected integration
@@ -31,4 +33,4 @@ This file is a map of paths in this repository. It does not load those files, st
 
 ## Status
 
-There is no application entry point, package manifest, test command, license file, or live integration in this repository. Missing or conflicting core data means an incomplete check, not a conclusion that conditions are safe.
+There is no application entry point, package manifest, test command, or live integration in this repository. Supported use is a complete clone. If core data is missing, stale, or conflicting, or a required calculation basis is unresolved, the overall conclusion must include "check incomplete" (检查不完整), list the affected judgments, and must not be written as if risk has been ruled out. The license is MIT: see [LICENSE](LICENSE).
