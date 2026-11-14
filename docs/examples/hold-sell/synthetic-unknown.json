@@ -1,0 +1,64 @@
+{
+  "label": "synthetic-unknown",
+  "synthetic": true,
+  "model": "two_outcome_first_hit",
+  "neither_boundary_by_horizon": "unresolved",
+  "both_hit_ordering": "unresolved",
+  "record_id": "SYN-HS-UNKNOWN",
+  "symbol": "SYN001",
+  "horizon": "合成日 D 至 D+3",
+  "hypothesis": "合成两结果。不估计真实概率。",
+  "evidence_cutoff": "合成日 D 15:00 Asia/Shanghai",
+  "as_of": "合成日 D 15:00 Asia/Shanghai",
+  "plan_snapshot_id": "v1",
+  "revision_id": "append-unknown",
+  "quantity": "100",
+  "quantity_unit": "shares",
+  "executable_now": {
+    "price": "10",
+    "kind": "hypothetical_stress",
+    "note": "合成现在可执行价，不是行情",
+    "source": "不适用",
+    "retrieved_at": "不适用",
+    "as_of": "不适用",
+    "session": "不适用",
+    "units": "元/股",
+    "adjustment": "不适用"
+  },
+  "up": {
+    "price": "12",
+    "kind": "hypothetical_stress",
+    "note": "合成上沿",
+    "source": "不适用",
+    "retrieved_at": "不适用",
+    "as_of": "不适用",
+    "session": "不适用",
+    "units": "元/股",
+    "adjustment": "不适用"
+  },
+  "down": {
+    "price": "8",
+    "kind": "hypothetical_stress",
+    "note": "合成下沿",
+    "source": "不适用",
+    "retrieved_at": "不适用",
+    "as_of": "不适用",
+    "session": "不适用",
+    "units": "元/股",
+    "adjustment": "不适用"
+  },
+  "probability_up": null,
+  "costs": {
+    "mode": "zero_cost_teaching",
+    "sell_now": {"commission_rate": "0", "commission_minimum": "0", "tax_rate": "0", "slippage_per_share": "0"},
+    "sell_later": {"commission_rate": "0", "commission_minimum": "0", "tax_rate": "0", "slippage_per_share": "0"},
+    "incremental_financing_interest": "0"
+  },
+  "constraints": {
+    "sellable_quantity": "100",
+    "lot_size": "100",
+    "board_limit_known": true,
+    "t_plus_one_blocks_sell_now": false,
+    "gap_or_limit_blocks_assumed_fill": false
+  }
+}

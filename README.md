@@ -10,7 +10,7 @@
 
 它不是已经验证的优势，不是实况数据产品，不会自动交易，也不是其他市场的通用短线框架。其他市场没有在这里检验。境外证券若出现，只作为当次写明的外部锚或同业。
 
-规则以 [docs/strategy.md](docs/strategy.md) 为准。本页只作入口，不重复全文。变更见 [CHANGELOG.md](CHANGELOG.md)，当前文档版本是 `2026-11-14.3`。
+规则以 [docs/strategy.md](docs/strategy.md) 为准。本页只作入口，不重复全文。变更见 [CHANGELOG.md](CHANGELOG.md)。纪律正文仍是 `2026-11-14.3`。情景比较是 `2026-11-14.5`。
 
 <a id="naming"></a>
 
@@ -31,7 +31,7 @@
 
 ## 快速开始
 
-本仓库没有安装命令或启动命令。支持的用法是克隆整个仓库，在这份完整克隆里阅读和使用。文档检查命令是 `python3 scripts/check_docs.py`。通过这次检查并不表示交易方法有效。
+本仓库没有安装命令或启动命令。支持的用法是克隆整个仓库，在这份完整克隆里阅读和使用。文档检查命令是 `python3 scripts/check_docs.py`。通过这次检查并不表示交易方法有效。持有与现在卖出的条件演算是 `python3 scripts/hold_sell.py docs/examples/hold-sell/synthetic-unknown.json`。通过这次演算并不表示继续持有更划算，也不表示交易方法有效。
 
 1. 阅读 [短线观察纪律](docs/strategy.md)。
 2. 做一次观察前，把 [交易计划卡](docs/templates/trade-plan.md) 另存到私人位置再填写。填好的卡片不要提交回本仓库。
@@ -60,6 +60,7 @@
 | 同一份交易记录上的三问 | [docs/trade-record.md](docs/trade-record.md)。合成走查在 [docs/examples/synthetic/](docs/examples/synthetic/README.md) |
 | 当次计划与事后复盘 | [交易计划卡](docs/templates/trade-plan.md)、[复盘卡](docs/templates/review.md) |
 | 开盘前的日历、海外时段与新闻核对 | [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) |
+| 继续持有相对于现在卖出的增量净额 | [docs/hold-sell-compare.md](docs/hold-sell-compare.md)。不是新的入场规则 |
 
 通用规则不写死证券、价位、数量或仓位门槛。观察名单、持有窗口、截止时间、证据存放处和接收人由当次调用方提供。
 
@@ -94,7 +95,8 @@
 | 文件 | 读者 |
 | --- | --- |
 | [README.en.md](README.en.md) | 英文入口，事实与本页对齐 |
-| [CHANGELOG.md](CHANGELOG.md) | 文档变更。当前版本 `2026-11-14.3` |
+| [CHANGELOG.md](CHANGELOG.md) | 文档变更。纪律正文 `2026-11-14.3`。情景比较 `2026-11-14.5` |
+| [docs/hold-sell-compare.md](docs/hold-sell-compare.md) | 持有与现在卖出的条件演算。通过并不表示交易方法有效 |
 | [scripts/check_docs.py](scripts/check_docs.py) | 文档检查。通过并不表示交易方法有效 |
 | [LICENSE](LICENSE) | MIT 许可证。版权人 Frank Cheng，2026 |
 | [AGENTS.md](AGENTS.md) | 代理：阅读顺序、仓库地图、修改约定和硬边界 |

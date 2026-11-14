@@ -27,6 +27,8 @@ English boundary, in short: supported scope is A-share liquidity repair inside a
 | [README.en.md](README.en.md) | 英文入口 |
 | [CHANGELOG.md](CHANGELOG.md) | 文档变更。当前版本 `2026-11-14.3` |
 | [scripts/check_docs.py](scripts/check_docs.py) | 文档检查命令 `python3 scripts/check_docs.py` |
+| [scripts/hold_sell.py](scripts/hold_sell.py) | 持有与现在卖出的十进制比较。不是下单，也不是策略检验 |
+| [docs/hold-sell-compare.md](docs/hold-sell-compare.md) | 情景比较的字段和限度。纪律版本仍是 `2026-11-14.3` |
 | [.github/workflows/docs-check.yml](.github/workflows/docs-check.yml) | 在 pull request 和 `main` 上运行该命令 |
 | [LICENSE](LICENSE) | MIT 许可证。版权人 Frank Cheng，2026 |
 | [llms.txt](llms.txt) | 相对链接导航。不自动加载，不授予权限 |
@@ -65,7 +67,7 @@ English boundary, in short: supported scope is A-share liquidity repair inside a
 - 新增链接只用本仓库内已经存在的相对路径。
 - 许可证保持仓库根目录的 MIT `LICENSE`。版权人是 Frank Cheng，年份是 2026。再分发须保留版权声明和许可声明。不要另写法律意见，也不要在 MIT 之外加使用限制。所有者没有明确更换之前，不要改成别的许可证。
 - 不添加下单、行情连接或调度代码。不修改仓库以外的运行例程。分析技能与数据适配保持分开；现在不新增适配器。
-- 提交前运行 `python3 scripts/check_docs.py`。它检查相对链接、技能前言、示例 YAML、字段和合成例结论。通过只说明这些结构一致。Passing this check does not validate trading performance。不要声称跑过仓库里不存在的命令。
+- 提交前运行 `python3 scripts/check_docs.py`，并运行 `python3 scripts/test_hold_sell.py`。文档检查看链接、前言、字段和合成例。情景比较测试看十进制和输入约定。Passing this check does not validate trading performance。不要声称跑过仓库里不存在的命令。
 
 <a id="boundaries"></a>
 
