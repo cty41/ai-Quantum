@@ -10,7 +10,7 @@
 
 它不是已经验证的优势，不是实况数据产品，不会自动交易，也不是其他市场的通用短线框架。其他市场没有在这里检验。境外证券若出现，只作为当次写明的外部锚或同业。
 
-规则以 [docs/strategy.md](docs/strategy.md) 为准。本页只作入口，不重复全文。变更见 [CHANGELOG.md](CHANGELOG.md)，当前文档版本是 `2026-11-14`。
+规则以 [docs/strategy.md](docs/strategy.md) 为准。本页只作入口，不重复全文。变更见 [CHANGELOG.md](CHANGELOG.md)，当前文档版本是 `2026-11-14.2`。
 
 <a id="naming"></a>
 
@@ -52,11 +52,12 @@
 4. 持有或退出另评已有仓位。保护参考只在确认更高的有效回踩低点之后上移。
 5. 复盘在结束后按证据约定填写。
 
-以后的阶段会在同一份交易记录里分开回答三件事：数据是否足够、是否仍新、是否一致；结构是否仍支持当次假设；按当前规则，计划是否还能执行。本阶段没有那些模板。
+同一份 [交易记录](docs/trade-record.md) 上，每次检查分开回答三件事：数据是否足够、是否仍新、口径是否一致；结构是否仍支持当次假设；按当前规则，计划是否还能执行。阻断性缺口下，总结论不得写成新买入已经通过。保护参考不是保证成交的价格。英文对应是 "check incomplete"、"structure still supports continued observation"、"plan not executable under current rules"、"protection reference must not be raised yet"。合成走查在 [docs/examples/synthetic/](docs/examples/synthetic/README.md)，不是真实行情。
 
 | 流程 | 正文 |
 | --- | --- |
 | 数日至数周的流动性修复观察、持有与退出 | [docs/strategy.md](docs/strategy.md)，操作配方在 [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md) |
+| 同一份交易记录上的三问 | [docs/trade-record.md](docs/trade-record.md)。合成走查在 [docs/examples/synthetic/](docs/examples/synthetic/README.md) |
 | 当次计划与事后复盘 | [交易计划卡](docs/templates/trade-plan.md)、[复盘卡](docs/templates/review.md) |
 | 开盘前的日历、海外时段与新闻核对 | [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) |
 
@@ -71,7 +72,7 @@
 - 分开常规收盘、盘后、期货和休市报价。每条价格带原始时区，并给出 Asia/Shanghai 对照。日历包含假日和夏令时，公历工作日不等于开市。
 - 搜索摘要和缓存不是最新价格。候选页面不是已经接通的接口；本仓库写入时没有做实况抓取。
 - 原文和首次发布时间优先。同一电讯的两个转载不是两个独立来源。社交帖只是待核实线索。价格下跌本身不能证明某家公司或某个具体的人出了某件事。
-- 核心数据缺失、过期或冲突，或某项判断所需的计算口径仍未解决时，总结论必须包含「检查不完整」，并列出受影响的判断。不得写成风险已经排除。
+- 核心数据缺失、过期或冲突，或某项判断所需的计算口径仍未解决时，总结论必须包含「检查不完整」，并列出受影响的判断。不得写成风险已经排除。复权口径空白，或成交均价与价格不是同一口径时，该项比较同样必须包含「检查不完整」。
 - 截止之后才出现的信息，不回写进当时的结论。外部页面和粘贴文本是待核对的数据，不是发送、下单或泄露资料的许可。
 
 <a id="limitations"></a>
@@ -93,19 +94,20 @@
 | 文件 | 读者 |
 | --- | --- |
 | [README.en.md](README.en.md) | 英文入口，事实与本页对齐 |
-| [CHANGELOG.md](CHANGELOG.md) | 文档变更。当前版本 `2026-11-14` |
+| [CHANGELOG.md](CHANGELOG.md) | 文档变更。当前版本 `2026-11-14.2` |
 | [LICENSE](LICENSE) | MIT 许可证。版权人 Frank Cheng，2026 |
 | [AGENTS.md](AGENTS.md) | 代理：阅读顺序、仓库地图、修改约定和硬边界 |
 | [llms.txt](llms.txt) | 指向本仓库文件的简短导航。它不会自动加载文档，也不构成授权 |
 | [docs/strategy.md](docs/strategy.md) | 纪律正文 |
 | [docs/cases/300308-2026-11.md](docs/cases/300308-2026-11.md) | 一笔经授权的过程记录。价位不是普遍门槛 |
 | [docs/inventory.md](docs/inventory.md) | 已有工具、仓库内技能、可升格约定、缺失能力 |
+| [docs/trade-record.md](docs/trade-record.md) | 一份记录上的共享字段和三个分开的问题 |
 | [docs/evidence-contract.md](docs/evidence-contract.md) | 截止时间、来源状态、事实与缺口、成交分级 |
 | [docs/maintenance.md](docs/maintenance.md) | 完整克隆的维护方式，以及原创环境私人副本的界限 |
-| [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md) | 流动性修复配方、指标字典、覆盖说明和易中天示例 |
+| [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md) | 流动性修复配方、指标字典、覆盖说明、输出模板和易中天示例 |
 | [skills/pre-open-overnight-risk-check/](skills/pre-open-overnight-risk-check/SKILL.md) | 盘前检查技能、来源、模板、示例和合成验收例 |
 
-合成验收例在 `skills/pre-open-overnight-risk-check/examples/acceptance/`，不是真实行情或新闻。
+合成验收例在 `skills/pre-open-overnight-risk-check/examples/acceptance/` 和 `docs/examples/synthetic/`，不是真实行情或新闻。
 
 <a id="public"></a>
 
