@@ -10,7 +10,7 @@ This repository is an A-share liquidity-repair research toolkit for a horizon of
 
 It is not a validated edge, not a live data product, and not automatic trading. It is not a general short-term framework for other markets. Other markets are not tested here. An overseas name, if one appears, is only an external anchor or a peer named for that run.
 
-The canonical rules are [docs/strategy.md](docs/strategy.md). This page is an entry point and does not restate them. Changes are listed in [CHANGELOG.md](CHANGELOG.md). The current documentation version is `2026-11-14.2`.
+The canonical rules are [docs/strategy.md](docs/strategy.md). This page is an entry point and does not restate them. Changes are listed in [CHANGELOG.md](CHANGELOG.md). The current documentation version is `2026-11-14.3`.
 
 <a id="naming"></a>
 
@@ -24,14 +24,14 @@ The name `ai-Quantum` alludes to the name of Soros's Quantum Fund. It is only a 
 
 - What exists is Markdown: the discipline, blank templates, and two checklist skills under `skills/` in this repository. Read them inside a complete clone. The original single-name closing-shape alert and the daily three-name volume review intended since 2026-11-13 are different. The latter is not a deployed program.
 - This is not a verified profitable strategy, and no backtest result is published here. One outcome does not prove a statistical edge.
-- There is no runnable application, no live quote or news integration, no scheduler, and no automatic order. Analysis skills stay separate from any future data adapter. None is included now.
+- There is no trading application, no live quote or news integration, no scheduler, and no automatic order. Analysis skills stay separate from any future data adapter. None is included now. The documentation check is in the quick start below. Passing this check does not validate trading performance.
 - The license is the [MIT License](LICENSE) at the repository root. The copyright holder is Frank Cheng, year 2026.
 
 <a id="quick-start"></a>
 
 ## Quick start
 
-There is no install command, test command, or start command. The supported use is to clone the whole repository and read it inside that complete clone.
+There is no install command or start command. The supported use is to clone the whole repository and read it inside that complete clone. The documentation check is `python3 scripts/check_docs.py`. Passing this check does not validate trading performance.
 
 1. Read the [strategy](docs/strategy.md).
 2. Before an observation, save a private copy of the [trade plan](docs/templates/trade-plan.md) and fill that copy. Do not commit the filled card.
@@ -94,7 +94,8 @@ The checks live in the strategy, the [liquidity indicators](skills/liquidity-rep
 | File | Reader |
 | --- | --- |
 | [README.md](README.md) | Chinese entry; the facts match this page |
-| [CHANGELOG.md](CHANGELOG.md) | Documentation changes. Current version `2026-11-14.2` |
+| [CHANGELOG.md](CHANGELOG.md) | Documentation changes. Current version `2026-11-14.3` |
+| [scripts/check_docs.py](scripts/check_docs.py) | Documentation check. Passing it does not validate trading performance |
 | [LICENSE](LICENSE) | MIT License. Copyright Frank Cheng, 2026 |
 | [AGENTS.md](AGENTS.md) | Agents: reading order, repository map, edit checks, and hard boundaries |
 | [llms.txt](llms.txt) | Short map of files in this repository. It does not load them and it grants nothing |
