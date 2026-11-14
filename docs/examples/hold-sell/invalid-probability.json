@@ -1,0 +1,23 @@
+{
+  "label": "invalid-probability",
+  "synthetic": true,
+  "quantity": "100",
+  "quantity_unit": "shares",
+  "executable_now": {"price": "10", "kind": "hypothetical_stress", "note": "无效例", "units": "元/股", "adjustment": "不适用"},
+  "up": {"price": "12", "kind": "hypothetical_stress", "note": "无效例", "units": "元/股", "adjustment": "不适用"},
+  "down": {"price": "8", "kind": "hypothetical_stress", "note": "无效例", "units": "元/股", "adjustment": "不适用"},
+  "probability_up": {"value": "1.2", "kind": "hypothetical_stress", "note": "越界，应当拒绝"},
+  "costs": {
+    "mode": "zero_cost_teaching",
+    "sell_now": {"commission_rate": "0", "commission_minimum": "0", "tax_rate": "0", "slippage_per_share": "0"},
+    "sell_later": {"commission_rate": "0", "commission_minimum": "0", "tax_rate": "0", "slippage_per_share": "0"},
+    "incremental_financing_interest": "0"
+  },
+  "constraints": {
+    "sellable_quantity": "100",
+    "lot_size": "100",
+    "board_limit_known": true,
+    "t_plus_one_blocks_sell_now": false,
+    "gap_or_limit_blocks_assumed_fill": false
+  }
+}

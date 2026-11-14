@@ -1,0 +1,235 @@
+{
+  "scenarios": [
+    {
+      "label": "zhongji-teaching-D544",
+      "synthetic": false,
+      "retrospective_teaching": true,
+      "not_broker_verified": true,
+      "not_a_universal_default": true,
+      "model": "two_outcome_first_hit",
+      "neither_boundary_by_horizon": "unresolved",
+      "both_hit_ordering": "unresolved",
+      "record_id": "300308-teaching-105930",
+      "symbol": "300308",
+      "horizon": "讨论当时尚未结束的持有窗口。教学演算不把窗口写成已经闭合。",
+      "hypothesis": "回顾教学：只用 10:59:30 讨论里的价位比较毛价差。后来的自述卖出不作为当时已知。",
+      "evidence_cutoff": "2026-11-12 10:59:30 Asia/Shanghai",
+      "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+      "plan_snapshot_id": "retrospective-not-a-live-snapshot",
+      "revision_id": "teaching-D544",
+      "quantity": "100",
+      "quantity_unit": "shares",
+      "executable_now": {
+        "price": "546.62",
+        "kind": "user_assumption",
+        "note": "2026-11-12 10:59:30 Asia/Shanghai 讨论中记下的价格。不是券商成交。后来自述的 547.50 不作为这次比较的输入，精确成交时间未知。",
+        "source": "不适用",
+        "retrieved_at": "不适用",
+        "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+        "session": "讨论记录中的价格，不是已核验成交",
+        "units": "元/股",
+        "adjustment": "未注明；本教学演算不把它当成已经解决的复权口径"
+      },
+      "up": {
+        "price": "553",
+        "kind": "user_assumption",
+        "note": "讨论中的上沿。不是必达目标，也不是保护价已经成交。",
+        "source": "不适用",
+        "retrieved_at": "不适用",
+        "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+        "session": "讨论记录中的价格，不是已核验成交",
+        "units": "元/股",
+        "adjustment": "未注明；本教学演算不把它当成已经解决的复权口径"
+      },
+      "down": {
+        "price": "544",
+        "kind": "user_assumption",
+        "note": "讨论中的下沿之一。",
+        "source": "不适用",
+        "retrieved_at": "不适用",
+        "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+        "session": "讨论记录中的价格，不是已核验成交",
+        "units": "元/股",
+        "adjustment": "未注明；本教学演算不把它当成已经解决的复权口径"
+      },
+      "probability_up": null,
+      "costs": {
+        "mode": "zero_cost_teaching",
+        "sell_now": {
+          "commission_rate": "0",
+          "commission_minimum": "0",
+          "tax_rate": "0",
+          "slippage_per_share": "0"
+        },
+        "sell_later": {
+          "commission_rate": "0",
+          "commission_minimum": "0",
+          "tax_rate": "0",
+          "slippage_per_share": "0"
+        },
+        "incremental_financing_interest": "0"
+      },
+      "constraints": {
+        "sellable_quantity": "100",
+        "lot_size": "100",
+        "board_limit_known": false,
+        "t_plus_one_blocks_sell_now": false,
+        "gap_or_limit_blocks_assumed_fill": false
+      }
+    },
+    {
+      "label": "zhongji-teaching-D541",
+      "synthetic": false,
+      "retrospective_teaching": true,
+      "not_broker_verified": true,
+      "not_a_universal_default": true,
+      "model": "two_outcome_first_hit",
+      "neither_boundary_by_horizon": "unresolved",
+      "both_hit_ordering": "unresolved",
+      "record_id": "300308-teaching-105930",
+      "symbol": "300308",
+      "horizon": "讨论当时尚未结束的持有窗口。教学演算不把窗口写成已经闭合。",
+      "hypothesis": "回顾教学：只用 10:59:30 讨论里的价位比较毛价差。后来的自述卖出不作为当时已知。",
+      "evidence_cutoff": "2026-11-12 10:59:30 Asia/Shanghai",
+      "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+      "plan_snapshot_id": "retrospective-not-a-live-snapshot",
+      "revision_id": "teaching-D541",
+      "quantity": "100",
+      "quantity_unit": "shares",
+      "executable_now": {
+        "price": "546.62",
+        "kind": "user_assumption",
+        "note": "2026-11-12 10:59:30 Asia/Shanghai 讨论中记下的价格。不是券商成交。后来自述的 547.50 不作为这次比较的输入，精确成交时间未知。",
+        "source": "不适用",
+        "retrieved_at": "不适用",
+        "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+        "session": "讨论记录中的价格，不是已核验成交",
+        "units": "元/股",
+        "adjustment": "未注明；本教学演算不把它当成已经解决的复权口径"
+      },
+      "up": {
+        "price": "553",
+        "kind": "user_assumption",
+        "note": "讨论中的上沿。不是必达目标，也不是保护价已经成交。",
+        "source": "不适用",
+        "retrieved_at": "不适用",
+        "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+        "session": "讨论记录中的价格，不是已核验成交",
+        "units": "元/股",
+        "adjustment": "未注明；本教学演算不把它当成已经解决的复权口径"
+      },
+      "down": {
+        "price": "541",
+        "kind": "user_assumption",
+        "note": "讨论中的下沿之一。",
+        "source": "不适用",
+        "retrieved_at": "不适用",
+        "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+        "session": "讨论记录中的价格，不是已核验成交",
+        "units": "元/股",
+        "adjustment": "未注明；本教学演算不把它当成已经解决的复权口径"
+      },
+      "probability_up": null,
+      "costs": {
+        "mode": "zero_cost_teaching",
+        "sell_now": {
+          "commission_rate": "0",
+          "commission_minimum": "0",
+          "tax_rate": "0",
+          "slippage_per_share": "0"
+        },
+        "sell_later": {
+          "commission_rate": "0",
+          "commission_minimum": "0",
+          "tax_rate": "0",
+          "slippage_per_share": "0"
+        },
+        "incremental_financing_interest": "0"
+      },
+      "constraints": {
+        "sellable_quantity": "100",
+        "lot_size": "100",
+        "board_limit_known": false,
+        "t_plus_one_blocks_sell_now": false,
+        "gap_or_limit_blocks_assumed_fill": false
+      }
+    },
+    {
+      "label": "zhongji-teaching-D537",
+      "synthetic": false,
+      "retrospective_teaching": true,
+      "not_broker_verified": true,
+      "not_a_universal_default": true,
+      "model": "two_outcome_first_hit",
+      "neither_boundary_by_horizon": "unresolved",
+      "both_hit_ordering": "unresolved",
+      "record_id": "300308-teaching-105930",
+      "symbol": "300308",
+      "horizon": "讨论当时尚未结束的持有窗口。教学演算不把窗口写成已经闭合。",
+      "hypothesis": "回顾教学：只用 10:59:30 讨论里的价位比较毛价差。后来的自述卖出不作为当时已知。",
+      "evidence_cutoff": "2026-11-12 10:59:30 Asia/Shanghai",
+      "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+      "plan_snapshot_id": "retrospective-not-a-live-snapshot",
+      "revision_id": "teaching-D537",
+      "quantity": "100",
+      "quantity_unit": "shares",
+      "executable_now": {
+        "price": "546.62",
+        "kind": "user_assumption",
+        "note": "2026-11-12 10:59:30 Asia/Shanghai 讨论中记下的价格。不是券商成交。后来自述的 547.50 不作为这次比较的输入，精确成交时间未知。",
+        "source": "不适用",
+        "retrieved_at": "不适用",
+        "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+        "session": "讨论记录中的价格，不是已核验成交",
+        "units": "元/股",
+        "adjustment": "未注明；本教学演算不把它当成已经解决的复权口径"
+      },
+      "up": {
+        "price": "553",
+        "kind": "user_assumption",
+        "note": "讨论中的上沿。不是必达目标，也不是保护价已经成交。",
+        "source": "不适用",
+        "retrieved_at": "不适用",
+        "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+        "session": "讨论记录中的价格，不是已核验成交",
+        "units": "元/股",
+        "adjustment": "未注明；本教学演算不把它当成已经解决的复权口径"
+      },
+      "down": {
+        "price": "537",
+        "kind": "user_assumption",
+        "note": "讨论中的下沿之一。",
+        "source": "不适用",
+        "retrieved_at": "不适用",
+        "as_of": "2026-11-12 10:59:30 Asia/Shanghai",
+        "session": "讨论记录中的价格，不是已核验成交",
+        "units": "元/股",
+        "adjustment": "未注明；本教学演算不把它当成已经解决的复权口径"
+      },
+      "probability_up": null,
+      "costs": {
+        "mode": "zero_cost_teaching",
+        "sell_now": {
+          "commission_rate": "0",
+          "commission_minimum": "0",
+          "tax_rate": "0",
+          "slippage_per_share": "0"
+        },
+        "sell_later": {
+          "commission_rate": "0",
+          "commission_minimum": "0",
+          "tax_rate": "0",
+          "slippage_per_share": "0"
+        },
+        "incremental_financing_interest": "0"
+      },
+      "constraints": {
+        "sellable_quantity": "100",
+        "lot_size": "100",
+        "board_limit_known": false,
+        "t_plus_one_blocks_sell_now": false,
+        "gap_or_limit_blocks_assumed_fill": false
+      }
+    }
+  ]
+}

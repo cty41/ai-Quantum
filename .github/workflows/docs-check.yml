@@ -18,3 +18,5 @@ jobs:
           python-version: "3.12"
       - name: documentation checks
         run: python3 scripts/check_docs.py
+      - name: hold versus sell arithmetic
+        run: python3 scripts/test_hold_sell.py

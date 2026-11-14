@@ -10,7 +10,7 @@ This repository is an A-share liquidity-repair research toolkit for a horizon of
 
 It is not a validated edge, not a live data product, and not automatic trading. It is not a general short-term framework for other markets. Other markets are not tested here. An overseas name, if one appears, is only an external anchor or a peer named for that run.
 
-The canonical rules are [docs/strategy.md](docs/strategy.md). This page is an entry point and does not restate them. Changes are listed in [CHANGELOG.md](CHANGELOG.md). These entry notes are `2026-11-14.4`. The discipline text remains `2026-11-14.3`. This page does not change the rules.
+The canonical rules are [docs/strategy.md](docs/strategy.md). This page is an entry point and does not restate them. Changes are listed in [CHANGELOG.md](CHANGELOG.md). These entry notes are `2026-11-14.4`. The discipline text remains `2026-11-14.3`. This page does not change the rules. The hold-versus-sell comparison is `2026-11-14.5`.
 
 <a id="naming"></a>
 
@@ -38,7 +38,7 @@ The addresses in the [pre-open source guide](skills/pre-open-overnight-risk-chec
 
 ## Quick start
 
-There is no install command or start command. The supported use is to clone the whole repository and read it inside that complete clone. The documentation check is `python3 scripts/check_docs.py`. Passing this check does not validate trading performance. A pass means the links, fields, synthetic-fixture labels, and the decimal examples already written in the repository agree.
+There is no install command or start command. The supported use is to clone the whole repository and read it inside that complete clone. The documentation check is `python3 scripts/check_docs.py`. Passing this check does not validate trading performance. A pass means the links, fields, synthetic-fixture labels, and the decimal examples already written in the repository agree. The hold-versus-sell arithmetic is `python3 scripts/hold_sell.py docs/examples/hold-sell/synthetic-unknown.json`. Passing that arithmetic does not mean holding is better, and it does not validate trading performance.
 
 The first time through, follow one existing synthetic record. It is not current market advice. For a real observation, copy a template to a private place and do not commit the filled card.
 
@@ -79,6 +79,7 @@ One [trade record](docs/trade-record.md) is reused. Each check answers three que
 | A single plan and the later review | [Trade plan](docs/templates/trade-plan.md), [Review](docs/templates/review.md) |
 | Pre-open calendar, overseas session, and news check | [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) |
 | First look at how one record is appended | [Synthetic walk-through 01](docs/examples/synthetic/01-complete-walkthrough.md). An example, not current advice |
+| Incremental net proceeds of holding versus selling now | [docs/hold-sell-compare.md](docs/hold-sell-compare.md). Not a second entry rule |
 
 The shared rules do not fix a ticker, a price, a quantity, or a position-size threshold. The caller supplies the watchlist, horizon, cutoff, evidence location, and recipients for that run.
 
@@ -113,7 +114,8 @@ The checks live in the strategy, the [liquidity indicators](skills/liquidity-rep
 | File | Reader |
 | --- | --- |
 | [README.md](README.md) | Chinese entry; the facts match this page |
-| [CHANGELOG.md](CHANGELOG.md) | Documentation changes. Entry notes `2026-11-14.4`. The discipline text remains `2026-11-14.3` |
+| [CHANGELOG.md](CHANGELOG.md) | Documentation changes. Entry notes `2026-11-14.4`. Discipline `2026-11-14.3`. Hold-versus-sell comparison `2026-11-14.5` |
+| [docs/hold-sell-compare.md](docs/hold-sell-compare.md) | Conditional hold-versus-sell arithmetic. Passing it does not validate trading performance |
 | [scripts/check_docs.py](scripts/check_docs.py) | Documentation check. Passing it does not validate trading performance |
 | [LICENSE](LICENSE) | MIT License. Copyright Frank Cheng, 2026 |
 | [AGENTS.md](AGENTS.md) | Agents: reading order, repository map, edit checks, and hard boundaries |
