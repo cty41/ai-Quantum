@@ -1,6 +1,6 @@
 # 仓库维护
 
-支持的用法是在本仓库的完整克隆里阅读和修改。`skills/*/SKILL.md` 留在原位置；普通的 Cursor 或其他代理不会自动安装它们。[llms.txt](../llms.txt) 只做导航。不要把 `skills/` 复制到私人技能文件夹当作安装。文档变更见 [CHANGELOG.md](../CHANGELOG.md)。
+支持的用法是在本仓库的完整克隆里阅读和修改。`skills/*/SKILL.md` 留在原位置；普通的 Cursor 或其他代理不会自动安装它们。[llms.txt](../llms.txt) 只做导航。不要把 `skills/` 复制到私人技能文件夹当作安装。文档变更见 [CHANGELOG.md](../CHANGELOG.md)。改完后运行 `python3 scripts/check_docs.py`。通过这次检查并不表示交易方法有效。
 
 分析技能与数据适配分开。现在没有适配器，维护时也不要顺手加一个。
 
