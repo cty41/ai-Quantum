@@ -20,7 +20,8 @@
 优先改已有的两份技能或 `docs/` 下的说明。
 
 - 新的检查字段：加进 `skills/liquidity-repair`，并在 [覆盖说明](../skills/liquidity-repair/coverage.md) 标明它是已确认读法、原始配方、后续扩展还是未解决。
-- 新的证据或成交分级：改 [证据约定](evidence-contract.md) 和 [复盘卡](templates/review.md)，两份技能只保留链接。
+- 新的证据或成交分级：改 [证据约定](evidence-contract.md)、[交易记录](trade-record.md) 和 [复盘卡](templates/review.md)，两份技能只保留链接。已经写下的计划快照不回改；规则变化写成新版本。
+- 新的合成走查：放在 `docs/examples/synthetic/`，标明 `synthetic: true`，写上冻结 as-of 和预期的三问结论。不完整或不可执行的例子不要写成放行。
 - 新的单笔过程：放在 `docs/cases/`，标明自述或券商核验，并写明价位不是普遍门槛。
 - 取数：现在没有稳定脚本。以后若有只读适配，只做一份，供两个技能共用。不要为收盘、融资和均价各建一个技能或各装一个接口。
 
