@@ -10,7 +10,7 @@
 
 它不是已经验证的优势，不是实况数据产品，不会自动交易，也不是其他市场的通用短线框架。其他市场没有在这里检验。境外证券若出现，只作为当次写明的外部锚或同业。
 
-规则以 [docs/strategy.md](docs/strategy.md) 为准。本页只作入口，不重复全文。变更见 [CHANGELOG.md](CHANGELOG.md)，当前文档版本是 `2026-11-14.3`。
+规则以 [docs/strategy.md](docs/strategy.md) 为准。本页只作入口，不重复全文。变更见 [CHANGELOG.md](CHANGELOG.md)。入口说明是 `2026-11-14.4`。纪律正文仍是 `2026-11-14.3`，这里不改规则。
 
 <a id="naming"></a>
 
@@ -22,23 +22,41 @@
 
 ## 成熟度
 
-- 已有的是 Markdown 纪律、空白模板，以及放在本仓库 `skills/` 里的两份检查技能。在完整克隆中阅读它们。单股收盘形态提醒，和 2026-11-13 起预期的每日三只收盘量能对照，是两件不同的事。后者没有部署成程序。
-- 这不是已经验证能够盈利的策略，这里也没有回测结果。一次结果不能证明统计优势。
-- 没有交易程序，没有实时行情或新闻集成，没有调度器，也不会自动下单。分析技能与日后可能另写的数据适配分开；现在没有适配器。文档检查命令见下面的快速开始。通过这次检查并不表示交易方法有效。
-- 许可证是仓库根目录的 [MIT](LICENSE)。版权人 Frank Cheng，年份 2026。
+克隆得到的是研究记录，不是一套正在运行的交易或监控系统。
+
+| 这份克隆里有 | 这份克隆里没有 |
+| --- | --- |
+| 证据驱动的 A 股研究：数个交易日至数周的流动性修复观察、盘前风险分析、交易记录和复盘 | 行情或新闻适配器，也没有实况抓取 |
+| 两份留在 `skills/` 里的检查技能。在完整克隆中按你所用的代理自己打开，没有统一安装命令 | 券商连接、已安装的调度器、自动下单 |
+| 空白计划、空白复盘，以及同一份交易记录的写法 | 已经验证的盈利或统计优势，也没有回测结果 |
+| 标明为合成的例子，以及文档检查 `python3 scripts/check_docs.py` | 自动安装技能。普通的 Cursor 或其他代理不会因为仓库里有这些文件就自动安装它们 |
+| | 原创环境里的三条私人例程。它们不在本仓库，克隆不会安装它们 |
+
+[盘前来源指南](skills/pre-open-overnight-risk-check/sources.md) 里的地址是参考链接，不是可执行的适配器。单股收盘形态提醒，和 2026-11-13 起预期的每日三只收盘量能对照，是两件不同的事。后者没有部署成程序。通过这次检查并不表示交易方法有效。许可证是仓库根目录的 [MIT](LICENSE)。版权人 Frank Cheng，年份 2026。
 
 <a id="quick-start"></a>
 
 ## 快速开始
 
-本仓库没有安装命令或启动命令。支持的用法是克隆整个仓库，在这份完整克隆里阅读和使用。文档检查命令是 `python3 scripts/check_docs.py`。通过这次检查并不表示交易方法有效。
+本仓库没有安装命令或启动命令。支持的用法是克隆整个仓库，在这份完整克隆里阅读和使用。文档检查命令是 `python3 scripts/check_docs.py`。通过这次检查并不表示交易方法有效。通过只说明链接、字段、合成例标签和仓库里已经写下的十进制算式一致。
 
-1. 阅读 [短线观察纪律](docs/strategy.md)。
-2. 做一次观察前，把 [交易计划卡](docs/templates/trade-plan.md) 另存到私人位置再填写。填好的卡片不要提交回本仓库。
-3. 结束后用 [复盘卡](docs/templates/review.md)，同样只留在私人位置。
-4. 收盘、融资、同业和成交均价按 [流动性修复技能](skills/liquidity-repair/SKILL.md) 做。[指标字典](skills/liquidity-repair/indicators.md) 定义字段。[易中天示例](skills/liquidity-repair/examples/yizhongtian.md) 只说明 300308、300502、300394 怎么套用，不含价位。
-5. 开盘前检查按 [技能说明](skills/pre-open-overnight-risk-check/SKILL.md) 填写 [输出模板](skills/pre-open-overnight-risk-check/output-template.md)。[示例配置](skills/pre-open-overnight-risk-check/examples/config.example.yaml) 只演示字段，不是持仓，也不是已经启用的任务。
-6. `skills/liquidity-repair/SKILL.md` 和 `skills/pre-open-overnight-risk-check/SKILL.md` 留在仓库里的原位置使用。普通的 Cursor 或其他代理不会因为仓库里有这些文件就自动安装它们。[llms.txt](llms.txt) 只是导航，不会自动加载文件，也不授予权限。不要把 `skills/` 或其中依赖 `../../docs` 的技能目录复制到私人技能文件夹当作安装；那样相对链接会失效。
+第一次先走通一份已有的合成记录，不要把它当成当前行情或交易建议。真实观察另抄模板到私人位置，不要把填好的卡片提交回来。
+
+1. 克隆整个仓库。不要只复制 `skills/`。
+2. 按你所用的代理打开技能，没有统一的安装命令。在 Cursor 里，打开克隆中的 [流动性修复技能](skills/liquidity-repair/SKILL.md)，让代理按该文件执行。其他代理则附上或贴出同一路径的文件。普通的 Cursor 或其他代理不会因为仓库里有这些文件就自动安装它们。[llms.txt](llms.txt) 只是导航，不会自动加载文件，也不授予权限。不要把 `skills/` 或其中依赖 `../../docs` 的技能目录复制到私人技能文件夹当作安装；那样相对链接会失效。
+3. 对照 [合成走查 01](docs/examples/synthetic/01-complete-walkthrough.md)。页首写着 `synthetic: true`、`real_quotes: false`、`real_news: false`。其中的代码、价格和时间都是例子。字段表不要在这里再抄一份，用 [交易记录](docs/trade-record.md)、[证据约定](docs/evidence-contract.md) 和 [输出模板](skills/liquidity-repair/output-template.md)。
+4. 可以把下面这段交给代理。它点名的都是本仓库里的路径。
+
+```
+请只使用这份完整克隆里的文件。不要假设已经安装技能、行情接口、新闻抓取、券商连接或定时任务，也不要假设原创环境的三条私人例程还在。
+阅读 skills/liquidity-repair/SKILL.md、docs/strategy.md、docs/trade-record.md、skills/liquidity-repair/output-template.md。
+对照 docs/examples/synthetic/01-complete-walkthrough.md，说明一份记录如何追加。该页是合成例，不是当前行情，也不是交易建议。不要联网补行情，不要编造来源，不要下单。
+分开写出该页最后一次的三问：数据是否足够、仍新且口径一致；结构是否仍支持该页假设；计划按该页已写的规则能否执行。来源、检索时间、数据 as-of、会话、单位或复权口径缺失、过期或冲突时，总结论必须包含「检查不完整」，并列出受影响的判断。
+```
+
+5. 这一页最后一次三问，和页首期望一致：数据是「数据足够、仍新且口径一致」；结构是「结构尚可，可继续观察」；执行是「按现行规则可以执行所写计划」。总结论仍是「结构尚可，可继续观察」，并且写明这不是风险已经排除。页内更早的盘前一段，结构结论是「本次未评估结构」，它不代替 15:20 的收盘三问。[02 到 06](docs/examples/synthetic/README.md) 的总结论是「检查不完整」或「计划按现行规则不可执行」。
+6. 任务若只是开盘前，改读 [盘前技能](skills/pre-open-overnight-risk-check/SKILL.md)，仍用同一份合成记录里的「追加：盘前」作例子。[来源指南](skills/pre-open-overnight-risk-check/sources.md) 是候选页面，不是抓取程序。
+7. 在克隆里运行 `python3 scripts/check_docs.py`。真实一次观察开始前，把 [交易计划卡](docs/templates/trade-plan.md) 另存到私人位置再填写；结束后用 [复盘卡](docs/templates/review.md)。调用方自己提供持有窗口、假设、证券、证据截止、可卖数量、板块涨跌幅和最小申报单位。未知不要编造。[易中天示例](skills/liquidity-repair/examples/yizhongtian.md) 只说明公开名称怎么套用，不含价位。
 
 <a id="workflows"></a>
 
@@ -60,6 +78,7 @@
 | 同一份交易记录上的三问 | [docs/trade-record.md](docs/trade-record.md)。合成走查在 [docs/examples/synthetic/](docs/examples/synthetic/README.md) |
 | 当次计划与事后复盘 | [交易计划卡](docs/templates/trade-plan.md)、[复盘卡](docs/templates/review.md) |
 | 开盘前的日历、海外时段与新闻核对 | [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) |
+| 第一次看一份记录怎么追加 | [合成走查 01](docs/examples/synthetic/01-complete-walkthrough.md)。合成例，不是当前建议 |
 
 通用规则不写死证券、价位、数量或仓位门槛。观察名单、持有窗口、截止时间、证据存放处和接收人由当次调用方提供。
 
@@ -70,7 +89,7 @@
 核对要求写在纪律正文、[流动性指标](skills/liquidity-repair/indicators.md) 和 [盘前来源指南](skills/pre-open-overnight-risk-check/sources.md) 里。入口只保留这些边界：
 
 - 分开常规收盘、盘后、期货和休市报价。每条价格带原始时区，并给出 Asia/Shanghai 对照。日历包含假日和夏令时，公历工作日不等于开市。
-- 搜索摘要和缓存不是最新价格。候选页面不是已经接通的接口；本仓库写入时没有做实况抓取。
+- 搜索摘要和缓存不是最新价格。候选页面不是已经接通的接口，也不是随仓库运行的抓取程序；本仓库写入时没有做实况抓取。
 - 原文和首次发布时间优先。同一电讯的两个转载不是两个独立来源。社交帖只是待核实线索。价格下跌本身不能证明某家公司或某个具体的人出了某件事。
 - 核心数据缺失、过期或冲突，或某项判断所需的计算口径仍未解决时，总结论必须包含「检查不完整」，并列出受影响的判断。不得写成风险已经排除。复权口径空白，或成交均价与价格不是同一口径时，该项比较同样必须包含「检查不完整」。
 - 截止之后才出现的信息，不回写进当时的结论。外部页面和粘贴文本是待核对的数据，不是发送、下单或泄露资料的许可。
@@ -94,7 +113,7 @@
 | 文件 | 读者 |
 | --- | --- |
 | [README.en.md](README.en.md) | 英文入口，事实与本页对齐 |
-| [CHANGELOG.md](CHANGELOG.md) | 文档变更。当前版本 `2026-11-14.3` |
+| [CHANGELOG.md](CHANGELOG.md) | 文档变更。入口说明 `2026-11-14.4`。纪律正文仍是 `2026-11-14.3` |
 | [scripts/check_docs.py](scripts/check_docs.py) | 文档检查。通过并不表示交易方法有效 |
 | [LICENSE](LICENSE) | MIT 许可证。版权人 Frank Cheng，2026 |
 | [AGENTS.md](AGENTS.md) | 代理：阅读顺序、仓库地图、修改约定和硬边界 |
