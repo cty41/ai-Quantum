@@ -602,8 +602,10 @@ def check_bilingual(root: Path) -> list[str]:
     if changelog.exists() and "## 2026-11-14.3" not in changelog.read_text(encoding="utf-8"):
         problems.append("CHANGELOG.md has no 2026-11-14.3 section")
     strategy = root / "docs" / "strategy.md"
-    if strategy.exists() and "版本：2026-11-14.3" not in strategy.read_text(encoding="utf-8"):
-        problems.append("docs/strategy.md version is not 2026-11-14.3")
+    if strategy.exists() and "版本：2026-11-23.1" not in strategy.read_text(encoding="utf-8"):
+        problems.append("docs/strategy.md version is not 2026-11-23.1")
+    if changelog.exists() and "## 2026-11-23.1" not in changelog.read_text(encoding="utf-8"):
+        problems.append("CHANGELOG.md has no 2026-11-23.1 section")
     return problems
 
 

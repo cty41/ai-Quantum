@@ -10,7 +10,7 @@ This repository is an A-share liquidity-repair research toolkit for a horizon of
 
 It is not a validated edge, not a live data product, and not automatic trading. It is not a general short-term framework for other markets. Other markets are not tested here. An overseas name, if one appears, is only an external anchor or a peer named for that run.
 
-The canonical rules are [docs/strategy.md](docs/strategy.md). This page is an entry point and does not restate them. Changes are listed in [CHANGELOG.md](CHANGELOG.md). These entry notes are `2026-11-14.4`. The discipline text remains `2026-11-14.3`. This page does not change the rules. The hold-versus-sell comparison is `2026-11-14.5`.
+The canonical rules are [docs/strategy.md](docs/strategy.md). This page is an entry point and does not restate them. Changes are listed in [CHANGELOG.md](CHANGELOG.md). These entry notes are `2026-11-14.4`. The discipline text is `2026-11-23.1`. The previous discipline text is `2026-11-14.3`. The hold-versus-sell comparison is `2026-11-14.5`.
 
 <a id="naming"></a>
 
@@ -105,6 +105,7 @@ The checks live in the strategy, the [liquidity indicators](skills/liquidity-rep
 - The historical planned clock for a close check is about 15:15, and for margin balances about 09:00 Asia/Shanghai. Neither clock guarantees an output. A 09:00 reading is the previous session's financing data, so it is delayed T+1 evidence. If it is missing, the overall conclusion must include "check incomplete", list the affected judgments, and must not say that no risk is known.
 - No multiple is agreed for climax volume or a long lower shadow. Whether the prior-20-session window includes the current bar, how suspensions are counted, which adjustment basis to use, and any doji ratio remain unresolved. A judgment that depends on one of those bases must carry an overall conclusion of "check incomplete".
 - Actual fills, full costs, T+1, slippage, fees, and financing interest belong in a private review, not in this repository.
+- A multi-day to multi-week hypothesis stays separate from one intraday VWAP loss or one failed spike. That single event does not by itself retire the whole hypothesis. An exit that has already triggered still stands. A wider structure pairs with a smaller planned size, without an ad hoc lower protective reference and without averaging down. Financing balances need not reach zero. Absolute principal and the balance-to-float ratio stay separate, and that ratio is not account leverage or forced-liquidation pressure. A skill-text update does not rewrite a written plan or a check that is already running. These remain unbacktested disciplines, not a validated edge.
 - Any later discussion of effectiveness has to freeze the rules first, use only evidence that existed at the time, and test across events and names out of sample.
 
 <a id="docs"></a>
@@ -114,7 +115,7 @@ The checks live in the strategy, the [liquidity indicators](skills/liquidity-rep
 | File | Reader |
 | --- | --- |
 | [README.md](README.md) | Chinese entry; the facts match this page |
-| [CHANGELOG.md](CHANGELOG.md) | Documentation changes. Entry notes `2026-11-14.4`. Discipline `2026-11-14.3`. Hold-versus-sell comparison `2026-11-14.5` |
+| [CHANGELOG.md](CHANGELOG.md) | Documentation changes. Entry notes `2026-11-14.4`. Discipline `2026-11-23.1` (previously `2026-11-14.3`). Hold-versus-sell comparison `2026-11-14.5` |
 | [docs/hold-sell-compare.md](docs/hold-sell-compare.md) | Conditional hold-versus-sell arithmetic. Passing it does not validate trading performance |
 | [scripts/check_docs.py](scripts/check_docs.py) | Documentation check. Passing it does not validate trading performance |
 | [LICENSE](LICENSE) | MIT License. Copyright Frank Cheng, 2026 |
