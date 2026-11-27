@@ -8,11 +8,11 @@
 
 This repository is an A-share liquidity-repair research toolkit for a horizon of several trading days to several weeks: an observation discipline, plus a pre-open check. The rules say how to verify the data session, use only completed sessions, and look together at whether selling pressure is fading, whether peers are consistent, whether price is finding support, and how much room remains inside marked historical trading zones. Entry, continued holding, and exit are written separately. For an existing position, a protective reference moves up only after a higher valid pullback low has been confirmed.
 
-The pre-open check follows the [pre-open skill](skills/pre-open-overnight-risk-check/SKILL.md). It is principle-driven: each run attempts a must-attempt coverage audit and filters by impact chains, including official notices that may be directionally positive. The four principles stay in that skill. They are not copied here.
+The pre-open check follows the [pre-open skill](skills/pre-open-overnight-risk-check/SKILL.md). It is principle-driven: each run attempts a must-attempt coverage audit and filters by impact chains, including official notices that may be directionally positive. A dated rule that is already announced but not yet effective stays on the observation calendar until it takes effect or the position is flat. The four principles and that calendar rule stay in that skill. They are not copied here. When a position is still held across the midday break, the official-news check before the afternoon session is in the [liquidity-repair skill](skills/liquidity-repair/SKILL.md). The pre-open check cannot see same-day lunch releases.
 
 It is not a validated edge, not a live data product, and not automatic trading. It is not a general short-term framework for other markets. Other markets are not tested here. An overseas name, if one appears, is only an external anchor or a peer named for that run.
 
-The canonical rules are [docs/strategy.md](docs/strategy.md). This page is an entry point and does not restate them. Changes are listed in [CHANGELOG.md](CHANGELOG.md). These entry notes are `2026-11-14.4`. The discipline text is `2026-11-23.1`. The previous discipline text is `2026-11-14.3`. This page does not change the rules again. The hold-versus-sell comparison is `2026-11-14.5`. The pre-open collection method is `2026-11-23`.
+The canonical rules are [docs/strategy.md](docs/strategy.md). This page is an entry point and does not restate them. Changes are listed in [CHANGELOG.md](CHANGELOG.md). These entry notes are `2026-11-14.4`. The discipline text is `2026-11-27`. The previous discipline text is `2026-11-23.1`. An earlier public discipline text is `2026-11-14.3`. This page does not change the rules again. The hold-versus-sell comparison is `2026-11-14.5`. The pre-open collection method is `2026-11-23`.
 
 <a id="naming"></a>
 
@@ -79,7 +79,7 @@ One [trade record](docs/trade-record.md) is reused. Each check answers three que
 | Multi-day to multi-week liquidity-repair observation, holding, and exit | [docs/strategy.md](docs/strategy.md); operating recipes in [skills/liquidity-repair/SKILL.md](skills/liquidity-repair/SKILL.md) |
 | One trade record and the three separate answers | [docs/trade-record.md](docs/trade-record.md). Synthetic walk-through: [docs/examples/synthetic/](docs/examples/synthetic/README.md) |
 | A single plan and the later review | [Trade plan](docs/templates/trade-plan.md), [Review](docs/templates/review.md) |
-| Pre-open check: principle-driven, must-attempt coverage audit, filtered by impact chains (including directionally positive official notices) | [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) |
+| Pre-open check: principle-driven, must-attempt coverage audit, filtered by impact chains (including directionally positive official notices); announced but not-yet-effective items stay on the observation calendar | [skills/pre-open-overnight-risk-check/SKILL.md](skills/pre-open-overnight-risk-check/SKILL.md) |
 | First look at how one record is appended | [Synthetic walk-through 01](docs/examples/synthetic/01-complete-walkthrough.md). An example, not current advice |
 | Incremental net proceeds of holding versus selling now | [docs/hold-sell-compare.md](docs/hold-sell-compare.md). Not a second entry rule |
 
@@ -102,7 +102,8 @@ The checks live in the strategy, the [liquidity indicators](skills/liquidity-rep
 
 ## Limitations
 
-- Longer-term fundamentals are used only to notice a sudden material negative inside the holding window. They do not confirm a short-term entry. Pre-open collection is separate: it is not limited to negatives, and directionally positive official notices are kept when they fit an impact chain. The detail is in the pre-open skill, not in this section.
+- Longer-term fundamentals are used only to notice a sudden material negative inside the holding window. They do not confirm a short-term entry. Pre-open collection is separate: it is not limited to negatives, and directionally positive official notices are kept when they fit an impact chain. Announced rules that are not yet effective stay until the effective date. The detail is in the pre-open skill, not in this section. A midday news check while a position is still held is an information check. It is not a new hold or add signal, and it does not cancel an exit that has already triggered.
+- A review may note a missed lunch release or a pending effective date retired too early. Later prices do not rewrite the exit plan that was already agreed.
 - News adds to selling-pressure, peer, and price-support observations. It does not replace them.
 - 08:30 Asia/Shanghai in the example is a start target, with a wish to have a note before 09:15. It is not a promise that the note exists then. Private routines in the original environment may have started between 08:15 and 08:30 and still waited in a queue. Those routines are not defined in this repository and are not present after a clone. Nothing here guarantees an output at that clock time, or that the check runs ahead of anyone else.
 - The historical planned clock for a close check is about 15:15, and for margin balances about 09:00 Asia/Shanghai. Neither clock guarantees an output. A 09:00 reading is the previous session's financing data, so it is delayed T+1 evidence. If it is missing, the overall conclusion must include "check incomplete", list the affected judgments, and must not say that no risk is known.
@@ -118,7 +119,7 @@ The checks live in the strategy, the [liquidity indicators](skills/liquidity-rep
 | File | Reader |
 | --- | --- |
 | [README.md](README.md) | Chinese entry; the facts match this page |
-| [CHANGELOG.md](CHANGELOG.md) | Documentation changes. Entry notes `2026-11-14.4`. Discipline `2026-11-23.1` (previously `2026-11-14.3`). Hold-versus-sell comparison `2026-11-14.5`. Pre-open collection method `2026-11-23` |
+| [CHANGELOG.md](CHANGELOG.md) | Documentation changes. Entry notes `2026-11-14.4`. Discipline `2026-11-27` (previously `2026-11-23.1`; earlier `2026-11-14.3`). Hold-versus-sell comparison `2026-11-14.5`. Pre-open collection method `2026-11-23` |
 | [docs/hold-sell-compare.md](docs/hold-sell-compare.md) | Conditional hold-versus-sell arithmetic. Passing it does not validate trading performance |
 | [scripts/check_docs.py](scripts/check_docs.py) | Documentation check. Passing it does not validate trading performance |
 | [LICENSE](LICENSE) | MIT License. Copyright Frank Cheng, 2026 |
